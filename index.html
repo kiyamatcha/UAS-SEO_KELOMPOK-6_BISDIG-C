@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Butter and Bake</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">Butter and Bake</div>
+  <div class="nav-menu">
+    <span class="pill"></span>
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#products" class="nav-link">Products</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+</nav>
+
+<section id="home" class="home">
+  <div class="home-overlay"></div>
+  <div class="home-card">
+    <h1>Toko Kue Online 24 Jam Jakarta</h1>
+    <p>Pilihan kue lengkap, layanan 24 jam, dan pengiriman cepat</p>
+    <a href="#products">Explore Menu</a>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <img src="about.jpg" alt="Butterbelle Bakery">
+  <div class="about-text">
+    <h2 style="font-style: italic;">Toko Kue Online 24 Jam Jakarta – Tentang Butter and Bake</h2>
+    <p id="aboutShort">
+      Toko Kue Online 24 Jam Jakarta Butter and Bake hadir berawal dari passion dalam dunia baking untuk menghadirkan kue dan cookies berkualitas tinggi.
+    </p>
+    <p id="aboutFull" style="display:none;">
+      Toko Kue Online 24 Jam Jakarta Butter and Bake hadir berawal dari passion dalam dunia baking untuk menghadirkan kue dan cookies berkualitas tinggi. Dari dapur kecil, Butter and Bake berkembang menjadi toko kue online yang dipercaya banyak pelanggan di Jakarta untuk berbagai kebutuhan spesial.<br><br>
+      Didukung oleh tim baker dan decorator berpengalaman, setiap kue dibuat dengan standar kualitas terbaik. Kami menggunakan bahan pilihan dan resep yang telah disempurnakan selama bertahun-tahun agar setiap produk memiliki rasa dan tampilan yang konsisten.<br><br>
+Sebagai Toko Kue Online 24 Jam Jakarta, Butter and Bake siap melayani kebutuhan kue ulang tahun, pernikahan, acara kantor, hingga hadiah spesial. Kami berkomitmen memberikan pelayanan cepat dan ramah untuk menciptakan momen yang berkesan bagi setiap pelanggan.    </p>
+    <button id="readMoreBtn">Read More</button>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <h2>Our Products</h2>
+
+  <div class="product-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="cake">Cakes</button>
+    <button class="filter-btn" data-filter="cookie">Cookies</button>
+  </div>
+
+  <div class="product-wrapper">
+    <button class="scroll-btn left">‹</button>
+    <div class="product-list" id="productList"></div>
+    <button class="scroll-btn right">›</button>
+  </div>
+</section>
+
+<div class="cart">
+  <div class="cart-items-wrapper">
+    <div class="cart-item">Produk 1</div>
+    <div class="cart-item">Produk 2</div>
+    <div class="cart-item">Produk 3</div>
+    <!-- dst -->
+  </div>
+  <button>Checkout</button>
+</div>
+
+<section id="faq" class="faq">
+  <h2>FAQ</h2>
+  <div class="faq-grid">
+    <div class="faq-card">
+      <h4 class="faq-question">Apakah bisa pre-order?</h4>
+      <p class="faq-answer">Bisa, minimal H-2 sebelum pengambilan.</p>
+    </div>
+    <div class="faq-card">
+      <h4 class="faq-question">Apakah bisa custom cake?</h4>
+      <p class="faq-answer">Bisa sesuai ukuran dan rasa.</p>
+    </div>
+    <div class="faq-card">
+      <h4 class="faq-question">Delivery tersedia?</h4>
+      <p class="faq-answer">Tersedia via kurir instan.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p><b>Email</b><br>
+      <a href="mailto:butterandbake@gmail.com" target="_blank">butterandbake@gmail.com</a>
+    </p>
+    <p><b>Instagram</b><br>
+      <a href="https://www.instagram.com/butterandbake/" target="_blank">@butterandbake</a>
+    </p>
+    <p><b>WhatsApp</b><br>
+      <a href="https://wa.me/628021004" target="_blank">+62 8021 004</a>
+    </p>
+    <p><b>Lokasi</b><br>
+      <a href="https://www.google.com/maps/place/Universitas+Negeri+Jakarta/@-6.1942537,106.876469,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f4ed14403213:0x2412a91a0f6a01c8!8m2!3d-6.194259!4d106.8790439!16s%2Fm%2F0vb3q5g?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Jakarta Timur, UNJ</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Butter and Bake — From Our Heart to Yours 🤎
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="productPopup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <img id="popupImg">
+    <h3 id="popupName"></h3>
+    <p id="popupDesc"></p>
+    <strong id="popupPrice"></strong>
+    <div class="qty-control">
+      <button onclick="changeQty(-1)">−</button>
+      <span id="popupQty">1</span>
+      <button onclick="changeQty(1)">+</button>
+    </div>
+    <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <p class="total">Total: Rp <span id="cartTotal">0</span></p>
+  <button onclick="openCheckout()">Checkout</button>
+</div>
+
+<div class="checkout" id="checkout">
+  <div>
+    <h3>Checkout</h3>
+    <input placeholder="Alamat lengkap">
+    <select>
+      <option>Transfer Bank</option>
+      <option>E-Wallet</option>
+      <option>COD</option>
+    </select>
+    <button>Pay Now</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

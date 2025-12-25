@@ -1,0 +1,446 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif
+}
+body{
+  background:#fffaf6;
+  color:#4b2e2b
+}
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:#5a3a2e;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.logo{
+  color:white;
+  font-size:22px;
+  font-weight:700
+}
+.nav-menu{
+  position:relative;
+  display:flex;
+  gap:25px
+}
+.nav-link{
+  color:#522202;
+  text-decoration:none;
+  padding:8px 16px
+}
+.pill{
+  position:absolute;
+  height:36px;
+  background:#f8ece4;
+  border-radius:20px;
+  transition:.3s;
+  z-index:-1
+}
+#cartBtn{
+  background:#f5e6dc;
+  border:none;
+  padding:8px 14px;
+  border-radius:20px
+}
+
+section{
+  padding:120px 80px
+}
+
+.home{
+  height:100vh;
+  background:url("background.jpg") center/cover;
+  position:relative;
+  display:flex;
+  align-items:center
+}
+.home-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45)
+}
+.home-card{
+  background:rgba(255,255,255,.9);
+  padding:50px;
+  border-radius:30px;
+  max-width:520px;
+  margin-left:80px;
+  position:relative
+}
+
+.about{
+  display:flex;
+  gap:60px;
+  align-items:center
+}
+.about img{
+  width:420px;
+  border-radius:25px
+}
+.about-text h2{
+  font-size:36px;
+  margin-bottom:15px
+}
+
+#readMoreBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #a25a3e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#readMoreBtn:hover {
+  background-color: #c06b4a;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+.products{
+  text-align:center;
+  background:#fdf1e8
+}
+.product-filter{
+  margin:30px
+}
+.filter-btn{
+  padding:10px 22px;
+  border:none;
+  border-radius:20px;
+  background:#e6c9b8;
+  margin:0 5px;
+  cursor:pointer
+}
+.filter-btn.active{
+  background:#5a3a2e;
+  color:white
+}
+
+.product-wrapper{
+  position:relative
+}
+.product-list{
+  display:flex;
+  gap:25px;
+  overflow-x:auto;
+  padding:20px;
+  scroll-behavior:smooth
+}
+.product-card{
+  min-width:220px;
+  background:white;
+  padding:18px;
+  border-radius:20px;
+  cursor:pointer
+}
+.product-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px
+}
+
+.scroll-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#5a3a2e;
+  color:white;
+  border:none;
+  width:40px;
+  height:40px;
+  border-radius:50%
+}
+.scroll-btn.left{
+  left:-20px
+}
+.scroll-btn.right{
+  right:-20px
+}
+
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center
+}
+.popup-content{
+  background:white;
+  padding:24px;
+  border-radius:22px;
+  width:320px;
+  text-align:center
+}
+.popup img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:16px
+}
+
+.qty-control{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:15px
+}
+.add-cart{
+  background:#5a3a2e;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  width:100%
+}
+
+.cart{
+  position:fixed;
+  right:-400px;
+  top:0;
+  width:360px;
+  height:100%;
+  background:white;
+  padding:20px;
+  transition:.4s;
+  z-index:2000
+}
+.cart.show{
+  right:0
+}
+.cart-item{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px
+}
+.cart img {
+  width: 80px;       
+  height: 80px;      
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:5px;
+}
+
+.cart-qty button {
+  width: 40px;      /* sama semua */
+  height: 40px;     /* sama semua */
+  border-radius: 10px;
+  border: none;
+  background: #a25a3e;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tombol Checkout */
+/* Pastikan tombol + dan - sama persis */
+.cart-qty button {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  background: #a25a3e;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Buat area item cart scrollable tanpa mengubah tombol checkout */
+.cart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cart-items-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px; /* jarak ke tombol checkout */
+  padding-right: 5px;  /* supaya scrollbar tidak menimpa konten */
+}
+
+/* Tombol Checkout */
+.cart button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #a25a3e, #a25a3e);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.cart button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #feb47b, #ff7e5f);
+}
+
+.cart button.checkout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #a25a3e, #a25a3e);
+}
+
+/* Membuat area item di cart bisa scroll */
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-items-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px; /* beri sedikit jarak ke tombol checkout */
+  padding-right: 5px;  /* supaya scrollbar tidak menimpa konten */
+}
+
+.cart button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #a25a3e, #a25a3e);
+}
+
+.checkout{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center
+}
+
+.faq{
+  text-align:center;
+  background:#f5e6dc
+}
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:40px
+}
+.faq-card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  cursor:pointer
+}
+.faq-answer{
+  max-height:0;
+  overflow:hidden
+}
+.faq-card.active .faq-answer{
+  max-height:120px
+}
+
+.contact{
+  text-align:center;
+  background:#fde8dc
+}
+.contact-card{
+  background:white;
+  padding:40px 60px;
+  border-radius:25px;
+  display:inline-block
+}
+
+footer{
+  background:#5a3a2e;
+  color:white;
+  text-align:center;
+  padding:25px
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  .nav-menu {
+    gap: 10px;
+    font-size: 14px;
+  }
+  #cartBtn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 80px 20px;
+  }
+
+  /* Home Section */
+  .home-card {
+    margin-left: 20px;
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  /* About Section */
+  .about {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .about img {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  /* Products */
+  .product-wrapper {
+    padding: 0 10px;
+  }
+  .scroll-btn.left {
+    left: 0;
+  }
+  .scroll-btn.right {
+    right: 0;
+  }
+
+  /* Contact */
+  .contact-card {
+    padding: 20px;
+    width: 90%;
+  }
+
+  footer {
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+}
